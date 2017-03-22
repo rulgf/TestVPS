@@ -79,6 +79,10 @@ class RegisterPacientViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func cancel(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     //MARK: Actions
     @IBAction func genderMaleAction(_ sender: UISwitch) {
@@ -147,7 +151,9 @@ class RegisterPacientViewController: UIViewController {
         
         pacientItemRef.setValue(paciente.toAnyObject())
         
-        performSegue(withIdentifier: "PacienteTableViewController", sender: self)
+        //performSegue(withIdentifier: "PacienteTableViewController", sender: self)
+        dismiss(animated: true, completion: nil)
+
     }
     
     

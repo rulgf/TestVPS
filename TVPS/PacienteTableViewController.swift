@@ -7,17 +7,30 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class PacienteTableViewController: UITableViewController {
     
     //MARK: Properties
-    
     var pacientes = [Pacient]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Load the sample data.
-        loadSamplePacientes()
+        //loadSamplePacientes()
+        let ref = FIRDatabase.database().reference(withPath: "pacients")
+        
+        ref.queryOrdered(byChild: "name").observe(.value, with: { snapshot in
+            var newPacients: [Pacient] = []
+            
+            for item in snapshot.children {
+                let pacientItem = Pacient(snapshot: item as! FIRDataSnapshot)
+                newPacients.append(pacientItem)
+            }
+            
+            self.pacientes = newPacients
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,15 +106,29 @@ class PacienteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        
+        guard let pacientDetailViewController = segue.destination as? pacientDetailViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        
+        guard let selectedPacientCell = sender as? PacienteTableViewCell else {
+            fatalError("Unexpected sender: \(sender)")
+        }
+        
+        guard let indexPath = tableView.indexPath(for: selectedPacientCell) else {
+            fatalError("The selected cell is not being displayed by the table")
+        }
+        
+        let selectedPacient = pacientes[indexPath.row]
+        pacientDetailViewController.pacient = selectedPacient
     }
-    */
+    
     
     //MARK: Actions
     /*@IBAction func unwindToMealList(sender: UIStoryboardSegue) {

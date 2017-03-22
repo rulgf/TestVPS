@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		01DEE77B63FD1808766B9E91 /* Pods_TVPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF241DC06C2BE5644C1C116 /* Pods_TVPSTests.framework */; };
 		381A9D5F1E762390005C17AC /* RegisterPacientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */; };
+		3829345E1E832F9300ABF154 /* pacientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */; };
 		3841B0221E6F6B15007F2BF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841B0211E6F6B15007F2BF3 /* LoginViewController.swift */; };
 		3841B0241E6F7072007F2BF3 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841B0231E6F7072007F2BF3 /* UserModel.swift */; };
 		3841B0291E6F8079007F2BF3 /* PacientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841B0281E6F8079007F2BF3 /* PacientModel.swift */; };
@@ -38,6 +39,7 @@
 /* Begin PBXFileReference section */
 		257A1B14C36EE0FBB502477A /* Pods-TVPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVPS/Pods-TVPS.debug.xcconfig"; sourceTree = "<group>"; };
 		381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPacientViewController.swift; sourceTree = "<group>"; };
+		3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pacientDetailViewController.swift; sourceTree = "<group>"; };
 		3841B0211E6F6B15007F2BF3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3841B0231E6F7072007F2BF3 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		3841B0281E6F8079007F2BF3 /* PacientModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacientModel.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				388C1BC11E733FBC004101AA /* SignInViewController.swift */,
 				388C1BC81E736575004101AA /* PacienteTableViewController.swift */,
 				381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */,
+				3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3841B0221E6F6B15007F2BF3 /* LoginViewController.swift in Sources */,
 				388C1BC21E733FBC004101AA /* SignInViewController.swift in Sources */,
 				38B941DC1E6F5518002A1ED1 /* ViewController.swift in Sources */,
+				3829345E1E832F9300ABF154 /* pacientDetailViewController.swift in Sources */,
 				388C1BC91E736575004101AA /* PacienteTableViewController.swift in Sources */,
 				3841B0241E6F7072007F2BF3 /* UserModel.swift in Sources */,
 				388C1BC71E735F28004101AA /* PacienteTableViewCell.swift in Sources */,
