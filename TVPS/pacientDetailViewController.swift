@@ -14,10 +14,16 @@ class pacientDetailViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastnameLabel: UILabel!
     @IBOutlet weak var genderLabel: UILabel!
+    @IBOutlet weak var schoolLabel: UILabel!
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var birthLabel: UILabel!
     @IBOutlet weak var cronLabel: UILabel!
     @IBOutlet weak var notesLabel: UILabel!
+    @IBOutlet weak var attenLabel: UILabel!
+    
+    var pacient: Pacient?
+    
+    
     
     // Set up views if editing an existing Meal.
 
@@ -25,6 +31,19 @@ class pacientDetailViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let pacient = pacient {
+            navigationItem.title = pacient.name
+            nameLabel.text   = pacient.name
+            lastnameLabel.text = pacient.lastname_F + " " + pacient.lastname_M
+            genderLabel.text = pacient.gender
+            schoolLabel.text = pacient.school
+            gradeLabel.text = pacient.grade
+            birthLabel.text = pacient.birth
+            cronLabel.text = pacient.cronAge
+            notesLabel.text = pacient.visualNote
+            attenLabel.text = pacient.attentNote
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

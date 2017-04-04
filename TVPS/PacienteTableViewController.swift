@@ -115,21 +115,24 @@ class PacienteTableViewController: UITableViewController {
         
         print(segue.description)
         
-        /*guard let pacientDetailViewController = segue.destination as? pacientDetailViewController else {
-            fatalError("Unexpected destination: \(segue.destination)")
+        if(segue.identifier != "addSegue"){
+            guard let pacientDetailViewController = segue.destination as? pacientDetailViewController else {
+             fatalError("Unexpected destination: \(segue.destination)")
+             }
+             
+             guard let selectedPacientCell = sender as? PacienteTableViewCell else {
+             fatalError("Unexpected sender: \(sender)")
+             }
+             
+             guard let indexPath = tableView.indexPath(for: selectedPacientCell) else {
+             fatalError("The selected cell is not being displayed by the table")
+             }
+             
+             let selectedPacient = pacientes[indexPath.row]
+            
+             pacientDetailViewController.pacient = selectedPacient
+             
         }
-        
-        guard let selectedPacientCell = sender as? PacienteTableViewCell else {
-            fatalError("Unexpected sender: \(sender)")
-        }
-        
-        guard let indexPath = tableView.indexPath(for: selectedPacientCell) else {
-            fatalError("The selected cell is not being displayed by the table")
-        }
-        
-        let selectedPacient = pacientes[indexPath.row]
-        //pacientDetailViewController.pacient = selectedPacient
-        */
     }
     
     
