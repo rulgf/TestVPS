@@ -113,7 +113,9 @@ class PacienteTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        guard let pacientDetailViewController = segue.destination as? pacientDetailViewController else {
+        print(segue.description)
+        
+        /*guard let pacientDetailViewController = segue.destination as? pacientDetailViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
         
@@ -126,7 +128,8 @@ class PacienteTableViewController: UITableViewController {
         }
         
         let selectedPacient = pacientes[indexPath.row]
-        pacientDetailViewController.pacient = selectedPacient
+        //pacientDetailViewController.pacient = selectedPacient
+        */
     }
     
     
