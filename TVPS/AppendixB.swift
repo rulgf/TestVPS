@@ -11,7 +11,7 @@ import FirebaseDatabase
 
 class AppendixB {
     
-    let age5_5 = [
+    static let age5_5 = [
         [4,3,5,4,6,4,6],//1
         [6,5,7,6,7,7,7],//2
         [7,7,8,7,9,8,9],//3
@@ -30,7 +30,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age5_11 = [
+    static let age5_11 = [
         [3,2,4,3,5,3,5],//1
         [5,4,6,5,6,6,7],//2
         [7,6,7,6,8,7,8],//3
@@ -49,7 +49,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age6_5 = [
+    static let age6_5 = [
         [3,2,3,2,4,3,4],//1
         [4,3,5,4,5,5,6],//2
         [6,5,6,6,7,6,8],//3
@@ -71,7 +71,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age6_11 = [
+    static let age6_11 = [
         [2,1,2,2,3,2,3],//1
         [4,2,4,4,4,4,5],//2
         [5,4,5,5,6,6,7],//3
@@ -93,7 +93,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age7_5 = [
+    static let age7_5 = [
         [2,1,1,1,2,2,3],//1
         [3,2,3,3,4,4,5],//2
         [5,3,5,5,5,5,7],//3
@@ -115,7 +115,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age7_11 = [
+    static let age7_11 = [
         [1,0,0,1,2,1,2],//1
         [3,1,3,2,3,3,5],//2
         [4,2,4,4,4,5,6],//3
@@ -137,7 +137,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age8_5 = [
+    static let age8_5 = [
         [1,0,0,1,1,1,2],//1
         [2,1,2,2,3,2,4],//2
         [4,2,4,4,4,4,6],//3
@@ -159,7 +159,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age8_11 = [
+    static let age8_11 = [
         [1,0,0,1,1,1,2],//1
         [2,0,2,2,2,2,4],//2
         [3,1,3,3,3,4,5],//3
@@ -181,7 +181,7 @@ class AppendixB {
         [19,19,19,19,19,19,19]//16
     ]
     
-    let age9_5 = [
+    static let age9_5 = [
         [0,0,0,0,1,0,1],//1
         [1,0,1,1,2,2,3],//2
         [3,1,3,3,3,3,5],//3
@@ -203,7 +203,7 @@ class AppendixB {
         [19,19,18,19,19,19,19]//16
     ]
     
-    let age9_11 = [
+    static let age9_11 = [
         [0,0,0,0,0,0,1],//1
         [1,0,1,1,1,1,3],//2
         [2,0,2,2,2,3,4],//3
@@ -225,7 +225,7 @@ class AppendixB {
         [19,18,18,19,19,19,19]//16
     ]
     
-    let age10_11 = [
+    static let age10_11 = [
         [0,0,0,0,0,0,1],//1
         [0,0,1,0,1,1,2],//2
         [1,0,2,1,2,2,4],//3
@@ -247,7 +247,7 @@ class AppendixB {
         [19,18,17,19,19,19,19]//16
     ]
     
-    let age11_11 = [
+    static let age11_11 = [
         [0,0,0,0,0,0,0],//1
         [0,0,0,0,0,0,1],//2
         [1,0,1,1,1,2,3],//3
@@ -269,7 +269,7 @@ class AppendixB {
         [18,17,16,18,18,19,19]//16
     ]
     
-    let age12_11 = [
+    static let age12_11 = [
         [0,0,0,0,0,0,0],//1
         [0,0,0,0,0,0,1],//2
         [0,0,0,0,1,1,2],//3
@@ -291,7 +291,7 @@ class AppendixB {
         [18,17,16,18,18,19,18]//16
     ]
     
-    let age13_11 = [
+    static let age13_11 = [
         [0,0,0,0,0,0,0],//1
         [0,0,0,0,0,0,1],//2
         [0,0,0,0,1,0,2],//3
@@ -313,7 +313,7 @@ class AppendixB {
         [17,16,15,18,18,19,17]//16
     ]
     
-    let age14_11 = [
+    static let age14_11 = [
         [0,0,0,0,0,0,0],//1
         [0,0,0,0,0,0,0],//2
         [0,0,0,0,0,0,1],//3
@@ -335,7 +335,7 @@ class AppendixB {
         [17,16,15,17,17,18,17]//16
     ]
     
-    let age15_11 = [
+    static let age15_11 = [
         [0,0,0,0,0,0,0],//1
         [0,0,0,0,0,0,0],//2
         [0,0,0,0,0,0,1],//3
@@ -357,7 +357,7 @@ class AppendixB {
         [16,15,14,17,17,18,16]//16
     ]
     
-    func getCronAge(birth: String, dateTest: String) -> Array<Int>{
+    class func getCronAge(birth: String, dateTest: String) -> Array<Int>{
         var birthArray = birth.components(separatedBy: "/").flatMap { Int($0.trimmingCharacters(in: .whitespaces)) }
         var testArray = dateTest.components(separatedBy: "/").flatMap { Int($0.trimmingCharacters(in: .whitespaces)) }
         var cronAge = [0,0,0]
@@ -389,11 +389,11 @@ class AppendixB {
         return cronAge
     }
     
-    func rawToScaled(rawScore: Array<Int>, birth: String, dateTest: String) -> Array<Int>{
-        var cronAge = self.getCronAge(birth: birth, dateTest: dateTest)
+    class func rawToScaled(rawScore: Array<Int>, birth: String, dateOfTest: String) -> Array<Double>{
+        var cronAge = self.getCronAge(birth: birth, dateTest: dateOfTest)
         
         var appTable = self.age5_5
-        var scaledScore = [0,0,0,0,0,0,0]
+        var scaledScore:Array<Double> = [0,0,0,0,0,0,0]
         
         if(cronAge[2]==5){
             if(cronAge[1]<=5){
@@ -441,13 +441,13 @@ class AppendixB {
             return scaledScore
         }
         
-        scaledScore[0] = appTable[rawScore[0]-1][0]
-        scaledScore[1] = appTable[rawScore[1]-1][1]
-        scaledScore[2] = appTable[rawScore[2]-1][2]
-        scaledScore[3] = appTable[rawScore[3]-1][3]
-        scaledScore[4] = appTable[rawScore[4]-1][4]
-        scaledScore[5] = appTable[rawScore[5]-1][5]
-        scaledScore[6] = appTable[rawScore[6]-1][6]
+        scaledScore[0] = Double(appTable[rawScore[0]-1][0])
+        scaledScore[1] = Double(appTable[rawScore[1]-1][1])
+        scaledScore[2] = Double(appTable[rawScore[2]-1][2])
+        scaledScore[3] = Double(appTable[rawScore[3]-1][3])
+        scaledScore[4] = Double(appTable[rawScore[4]-1][4])
+        scaledScore[5] = Double(appTable[rawScore[5]-1][5])
+        scaledScore[6] = Double(appTable[rawScore[6]-1][6])
         
         return scaledScore
     }

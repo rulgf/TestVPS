@@ -178,6 +178,18 @@ class examViewController: UIViewController {
                 "key": self.key!,
                 "1string": self.allAnswers,
                 "1res": totalCorrect - 2,
+                "2string": "",
+                "2res": 0,
+                "3string": "",
+                "3res": 0,
+                "4string": "",
+                "4res": 0,
+                "5string": "",
+                "5res": 0,
+                "6string": "",
+                "6res": 0,
+                "7string": "",
+                "7res": 0,
                 "appliedBy": self.pacientKey!,
                 "date": dateTest
             ]

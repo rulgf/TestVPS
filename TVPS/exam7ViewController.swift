@@ -133,7 +133,7 @@ class exam7ViewController: UIViewController {
             allAnswers = allAnswers + "x"
             if(numberQuestion > 2){
                 errors += 1
-                if(errors >= 3){
+                if(errors >= 3 || numberQuestion == 18){
                     saveResult()
                 }else{
                     numberQuestion += 1

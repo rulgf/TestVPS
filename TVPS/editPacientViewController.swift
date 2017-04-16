@@ -102,7 +102,7 @@ class editPacientViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "principalSegue", sender: nil)
     }
     
     //MARK: Actions
@@ -169,8 +169,23 @@ class editPacientViewController: UIViewController {
             "visualNote": noteVisual
             ])
         
-        dismiss(animated: true, completion: nil)//Cambiar
+        performSegue(withIdentifier: "principalSegue", sender: nil)
         
     }
+    
+    @IBAction func deletePacient(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Eliminar Usuario", message: "Esta seguro de eliminar el usuario", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Sí", style: UIAlertActionStyle.default, handler: {action in self.eliminar()}))
+        alert.addAction(UIAlertAction(title: "Cancelar", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func eliminar(){
+        let ref = FIRDatabase.database().reference().child("pacients/"+key)
+        
+        ref.removeValue()
+        performSegue(withIdentifier: "principalSegue", sender: nil)
+    }
+    
 
 }

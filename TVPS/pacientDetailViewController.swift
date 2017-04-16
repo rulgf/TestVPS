@@ -87,6 +87,12 @@ class pacientDetailViewController: UIViewController, UITableViewDelegate, UITabl
             }
             startTestViewController.pacienteKey = (self.pacient?.key)!
             startTestViewController.actualTest = 1
+        }else if(segue.identifier == "viewTest"){
+            guard let resultsViewController = segue.destination as? resultsViewController else{
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            resultsViewController.test = sender as! Test
+            resultsViewController.birth = self.pacient?.birth
         }
     }
 
@@ -110,6 +116,10 @@ class pacientDetailViewController: UIViewController, UITableViewDelegate, UITabl
         cell.detailTextLabel?.text = self.exams[indexPath.row].date
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "viewTest", sender: exams[indexPath.row])
     }
     
 
