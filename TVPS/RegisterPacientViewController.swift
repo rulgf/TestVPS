@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class RegisterPacientViewController: UIViewController {
     
@@ -25,17 +26,25 @@ class RegisterPacientViewController: UIViewController {
     @IBOutlet weak var attentionTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-    var user: User!
+    //var user: User!
+    var Uemail = ""
     
     let ref = FIRDatabase.database().reference(withPath: "pacients")
     let usersRef = FIRDatabase.database().reference(withPath: "online")
     
-    var genderString = "male"
+    var genderString = "Masculino"
     var birthString = ""
     var cronString = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //USer
+        if let user = FIRAuth.auth()?.currentUser {
+            self.Uemail = user.email!
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
         saveButton.isEnabled = false
         nameTextField.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
         lastNameF.addTarget(self, action: #selector(editingChanged(_:)), for: .editingChanged)
@@ -92,7 +101,7 @@ class RegisterPacientViewController: UIViewController {
         if(!maleSwitch.isOn){
             femaleSwitch.setOn(true, animated: true)
         }else{
-            genderString = "male"
+            genderString = "Masculino"
         }
     }
     
@@ -103,7 +112,7 @@ class RegisterPacientViewController: UIViewController {
         if(!femaleSwitch.isOn){
             maleSwitch.setOn(true, animated: true)
         }else{
-            genderString = "female"
+            genderString = "Femenino"
         }
     }
     
@@ -114,7 +123,7 @@ class RegisterPacientViewController: UIViewController {
         let month = calendar.component(.month, from: birthDatePicker.date)
         let day = calendar.component(.day, from: birthDatePicker.date)
         
-        cronString = day.description + "/" + month.description + "/" + year.description
+        birthString = day.description + "/" + month.description + "/" + year.description
         
     }
     
@@ -125,7 +134,7 @@ class RegisterPacientViewController: UIViewController {
         let month = calendar.component(.month, from: cronDatePicker.date)
         let day = calendar.component(.day, from: cronDatePicker.date)
         
-        birthString = day.description + "/" + month.description + "/" + year.description
+        cronString = day.description + "/" + month.description + "/" + year.description
     }
     
     @IBAction func savePacientAction(_ sender: UIBarButtonItem) {
@@ -142,12 +151,16 @@ class RegisterPacientViewController: UIViewController {
         let noteVisual = visualNotesTextField.text ?? ""
         let noteAttention = attentionTextField.text ?? ""
         
+        let todaysDate:Date = Date()
+        let dateFormatter:DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy-HH:mm"
+        let DateInFormat:String = dateFormatter.string(from: todaysDate)
         
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
-        let paciente = Pacient(name: name, lastname_F: lastnameF, lastname_M: lastnameM, gender: gender, grade: grade, school: school, birth: birth, cronAge: cronAge, attentNote: noteAttention, visualNote: noteVisual, addedByUser: "prueba@prueba.com")
-        //self.user.email
+        let key = name+lastnameF+lastnameM+DateInFormat
         
-        let pacientItemRef = self.ref.child(name + " " + lastnameF + " " + lastnameM)
+        let paciente = Pacient(name: name, lastname_F: lastnameF, lastname_M: lastnameM, gender: gender, grade: grade, school: school, birth: birth, cronAge: cronAge, attentNote: noteAttention, visualNote: noteVisual, addedByUser: Uemail, key: key)
+        
+        let pacientItemRef = self.ref.child(key)
         
         pacientItemRef.setValue(paciente.toAnyObject())
         

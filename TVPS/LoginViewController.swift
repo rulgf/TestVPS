@@ -36,29 +36,45 @@ class LoginViewController: UIViewController {
         let passwd = passwordTextField.text
         let repeatPass = repeatPassTextField.text
         
-        //Verificar que la contraseña es igual
-        if(passwd == repeatPass){
-            // Crear el usuario
-            FIRAuth.auth()!.createUser(withEmail: email!,
-                                       password: passwd!) { user, error in
-                                        if error == nil {
-                                            // Iniciar sesión para el usuario actual
-                                            FIRAuth.auth()!.signIn(withEmail: email!,
-                                                                   password: passwd!)
-                                        }else{
-                                            let alert = UIAlertController(title: "Error", message: "No se pudo hacer el registro, intente más tarde", preferredStyle: UIAlertControllerStyle.alert)
-                                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                                            self.present(alert, animated: true, completion: nil)
-                                        }
-            }
-            //Actualizar el nombre del usuario con el texto ingresado
-            let user = FIRAuth.auth()?.currentUser
-            
-            if let user = user {
-                let changeRequest = user.profileChangeRequest()
+        if(name != "" && email != "" && passwd != "" && repeatPass != ""){
+            //Verificar que la contraseña es igual
+            if(passwd == repeatPass){
+                // Crear el usuario
+                FIRAuth.auth()!.createUser(withEmail: email!,
+                                           password: passwd!) { user, error in
+                                            if error == nil {
+                                                // Iniciar sesión para el usuario actual
+                                                FIRAuth.auth()!.signIn(withEmail: email!,
+                                                                       password: passwd!)
+                                            }else{
+                                                let alert = UIAlertController(title: "Error", message: "No se pudo hacer el registro, intente más tarde", preferredStyle: UIAlertControllerStyle.alert)
+                                                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                                                self.present(alert, animated: true, completion: nil)
+                                            }
+                }
+                //Actualizar el nombre del usuario con el texto ingresado
+                let user = FIRAuth.auth()?.currentUser
                 
-                changeRequest.displayName = name
+                if let user = user {
+                    let changeRequest = user.profileChangeRequest()
+                    
+                    changeRequest.displayName = name
+                    
+                    let alert = UIAlertController(title: "Registro exitoso", message: "El usuario ha sido registrado en el sistema", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    dismiss(animated: true, completion: nil)
+                }
+            }else{
+                let alert = UIAlertController(title: "Contraseñas", message: "Las contraseñas no coinciden", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
+        }else{
+            let alert = UIAlertController(title: "Campos vacíos", message: "Favor de llenar los campos para poder hacer el registro", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 

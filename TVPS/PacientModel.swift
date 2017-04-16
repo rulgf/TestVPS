@@ -26,7 +26,7 @@ class Pacient {
     
     init(name: String, lastname_F: String, lastname_M: String,
          gender: String, grade: String, school: String, birth: String, cronAge: String,
-         attentNote: String, visualNote: String, addedByUser: String, key: String = "") {
+         attentNote: String, visualNote: String, addedByUser: String, key: String) {
         self.key = key
         self.name = name
         self.lastname_F = lastname_F
@@ -61,6 +61,7 @@ class Pacient {
     
     func toAnyObject() -> Any {
         return [
+            "key": key,
             "name": name,
             "lastname_F": lastname_F,
             "lastname_M": lastname_M,

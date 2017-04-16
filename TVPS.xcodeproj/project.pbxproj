@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		01DEE77B63FD1808766B9E91 /* Pods_TVPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF241DC06C2BE5644C1C116 /* Pods_TVPSTests.framework */; };
 		2115CF991E93FDAD00565599 /* examViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115CF981E93FDAD00565599 /* examViewController.swift */; };
+		2115CF9B1E95C9DD00565599 /* exam2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115CF9A1E95C9DD00565599 /* exam2ViewController.swift */; };
+		2143097C1E995B0500DB8CD1 /* editPacientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2143097B1E995B0500DB8CD1 /* editPacientViewController.swift */; };
+		215205A41EA08AC000DF7A17 /* exam3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205A31EA08AC000DF7A17 /* exam3ViewController.swift */; };
+		215205A61EA08AEC00DF7A17 /* exam4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205A51EA08AEC00DF7A17 /* exam4ViewController.swift */; };
+		215205A81EA08B0400DF7A17 /* exam5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205A71EA08B0400DF7A17 /* exam5ViewController.swift */; };
+		215205AA1EA08B1600DF7A17 /* exam6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205A91EA08B1600DF7A17 /* exam6ViewController.swift */; };
+		215205AC1EA08B2500DF7A17 /* exam7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205AB1EA08B2500DF7A17 /* exam7ViewController.swift */; };
+		215205AE1EA183AC00DF7A17 /* AppendixB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215205AD1EA183AC00DF7A17 /* AppendixB.swift */; };
+		217AB9C31EA2B892004C0BF7 /* testModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AB9C21EA2B892004C0BF7 /* testModel.swift */; };
+		2199CBCA1E970DF5001943F5 /* startTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2199CBC91E970DF5001943F5 /* startTestViewController.swift */; };
 		381A9D5F1E762390005C17AC /* RegisterPacientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */; };
 		3829345E1E832F9300ABF154 /* pacientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */; };
 		3841B0221E6F6B15007F2BF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3841B0211E6F6B15007F2BF3 /* LoginViewController.swift */; };
@@ -39,6 +49,16 @@
 
 /* Begin PBXFileReference section */
 		2115CF981E93FDAD00565599 /* examViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = examViewController.swift; sourceTree = "<group>"; };
+		2115CF9A1E95C9DD00565599 /* exam2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam2ViewController.swift; sourceTree = "<group>"; };
+		2143097B1E995B0500DB8CD1 /* editPacientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editPacientViewController.swift; sourceTree = "<group>"; };
+		215205A31EA08AC000DF7A17 /* exam3ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam3ViewController.swift; sourceTree = "<group>"; };
+		215205A51EA08AEC00DF7A17 /* exam4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam4ViewController.swift; sourceTree = "<group>"; };
+		215205A71EA08B0400DF7A17 /* exam5ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam5ViewController.swift; sourceTree = "<group>"; };
+		215205A91EA08B1600DF7A17 /* exam6ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam6ViewController.swift; sourceTree = "<group>"; };
+		215205AB1EA08B2500DF7A17 /* exam7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exam7ViewController.swift; sourceTree = "<group>"; };
+		215205AD1EA183AC00DF7A17 /* AppendixB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppendixB.swift; sourceTree = "<group>"; };
+		217AB9C21EA2B892004C0BF7 /* testModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testModel.swift; sourceTree = "<group>"; };
+		2199CBC91E970DF5001943F5 /* startTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startTestViewController.swift; sourceTree = "<group>"; };
 		257A1B14C36EE0FBB502477A /* Pods-TVPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TVPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TVPS/Pods-TVPS.debug.xcconfig"; sourceTree = "<group>"; };
 		381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPacientViewController.swift; sourceTree = "<group>"; };
 		3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pacientDetailViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +112,8 @@
 			children = (
 				3841B0231E6F7072007F2BF3 /* UserModel.swift */,
 				3841B0281E6F8079007F2BF3 /* PacientModel.swift */,
+				215205AD1EA183AC00DF7A17 /* AppendixB.swift */,
+				217AB9C21EA2B892004C0BF7 /* testModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -106,6 +128,14 @@
 				381A9D5E1E762390005C17AC /* RegisterPacientViewController.swift */,
 				3829345D1E832F9300ABF154 /* pacientDetailViewController.swift */,
 				2115CF981E93FDAD00565599 /* examViewController.swift */,
+				2115CF9A1E95C9DD00565599 /* exam2ViewController.swift */,
+				215205A31EA08AC000DF7A17 /* exam3ViewController.swift */,
+				215205A51EA08AEC00DF7A17 /* exam4ViewController.swift */,
+				215205A71EA08B0400DF7A17 /* exam5ViewController.swift */,
+				215205A91EA08B1600DF7A17 /* exam6ViewController.swift */,
+				215205AB1EA08B2500DF7A17 /* exam7ViewController.swift */,
+				2199CBC91E970DF5001943F5 /* startTestViewController.swift */,
+				2143097B1E995B0500DB8CD1 /* editPacientViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -395,16 +425,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				3841B0291E6F8079007F2BF3 /* PacientModel.swift in Sources */,
+				215205A81EA08B0400DF7A17 /* exam5ViewController.swift in Sources */,
 				2115CF991E93FDAD00565599 /* examViewController.swift in Sources */,
+				215205A61EA08AEC00DF7A17 /* exam4ViewController.swift in Sources */,
 				3841B0221E6F6B15007F2BF3 /* LoginViewController.swift in Sources */,
 				388C1BC21E733FBC004101AA /* SignInViewController.swift in Sources */,
 				38B941DC1E6F5518002A1ED1 /* ViewController.swift in Sources */,
+				215205AC1EA08B2500DF7A17 /* exam7ViewController.swift in Sources */,
 				3829345E1E832F9300ABF154 /* pacientDetailViewController.swift in Sources */,
+				217AB9C31EA2B892004C0BF7 /* testModel.swift in Sources */,
+				215205AE1EA183AC00DF7A17 /* AppendixB.swift in Sources */,
+				215205A41EA08AC000DF7A17 /* exam3ViewController.swift in Sources */,
+				2199CBCA1E970DF5001943F5 /* startTestViewController.swift in Sources */,
 				388C1BC91E736575004101AA /* PacienteTableViewController.swift in Sources */,
 				3841B0241E6F7072007F2BF3 /* UserModel.swift in Sources */,
+				2115CF9B1E95C9DD00565599 /* exam2ViewController.swift in Sources */,
 				388C1BC71E735F28004101AA /* PacienteTableViewCell.swift in Sources */,
 				381A9D5F1E762390005C17AC /* RegisterPacientViewController.swift in Sources */,
 				38B941DA1E6F5518002A1ED1 /* AppDelegate.swift in Sources */,
+				215205AA1EA08B1600DF7A17 /* exam6ViewController.swift in Sources */,
+				2143097C1E995B0500DB8CD1 /* editPacientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

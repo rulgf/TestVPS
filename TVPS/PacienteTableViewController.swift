@@ -8,19 +8,27 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class PacienteTableViewController: UITableViewController {
     
     //MARK: Properties
     var pacientes = [Pacient]()
+    //var user: User!
+    
+    var Uemail = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Load the sample data.
-        //loadSamplePacientes()
+        if let user = FIRAuth.auth()?.currentUser {
+             self.Uemail = user.email!
+        } else {
+            dismiss(animated: true, completion: nil)
+        }
+        
         let ref = FIRDatabase.database().reference(withPath: "pacients")
         
-        ref.queryOrdered(byChild: "name").observe(.value, with: { snapshot in
+        ref.queryOrdered(byChild: "addedByUser").queryEqual(toValue: Uemail).observe(.value, with: { snapshot in
             var newPacients: [Pacient] = []
             
             for item in snapshot.children {
@@ -121,7 +129,7 @@ class PacienteTableViewController: UITableViewController {
              }
              
              guard let selectedPacientCell = sender as? PacienteTableViewCell else {
-             fatalError("Unexpected sender: \(sender)")
+             fatalError("Unexpected sender: \(String(describing: sender))")
              }
              
              guard let indexPath = tableView.indexPath(for: selectedPacientCell) else {
@@ -147,14 +155,15 @@ class PacienteTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
     }*/
+    @IBAction func signoutButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     
     //MARK: Private Methods
     
     private func loadSamplePacientes() {
-        let paciente1 = Pacient(name: "Prueba", lastname_F: "Es", lastname_M: "Este", gender: "Masculino", grade: "2do preparatoria", school: "Tec", birth: "1/1/1999", cronAge: "1/1/1999", attentNote: "No pone atencion", visualNote: "no ve bien", addedByUser: "prueba@prueba.com")
-        pacientes += [paciente1]
     }
 
 }

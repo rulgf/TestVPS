@@ -19,6 +19,14 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // 1
+        FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
+            // 2
+            if user != nil {
+                // 3
+                self.performSegue(withIdentifier: "startApp", sender: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,6 +48,10 @@ class SignInViewController: UIViewController {
     @IBAction func SignInAction(_ sender: UIButton) {
         if(emailTextField.text == ""){
             let alert = UIAlertController(title: "Email", message: "The Email is missing", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }else if(passwordTextField.text == ""){
+            let alert = UIAlertController(title: "Password", message: "The Password is missing", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }else{
